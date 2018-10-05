@@ -26,20 +26,29 @@ Gets the status of an Atag One thermostat on an input message.
 
 *Configuration:*
 - Name : Optionally specify a name
-- Controller : Select the openHAB controller
+- Controller : Select the Atag One controller
 
 *Messages injected in NodeRED flows (1 channel):*
 
 Channel 1:
-The input message with addition of :
-- <kbd>msg.payload</kbd> : the item object (name, label, state, ...)
-- <kbd>msg.payload_in</kbd> : copy of incoming message's payload
+The state of the thermostat:
+- <kbd>msg.payload.burningHours</kbd> : Total burning hours
+- <kbd>msg.payload.roomTemp</kbd> : The temperature measured by th thermostat
+- <kbd>msg.payload.outsideTemp</kbd> : The outside temperature
+- <kbd>msg.payload.hotWaterTemp</kbd> : The temperature of the hot water outlet
+- <kbd>msg.payload.chWaterTemp</kbd> : The temperature of the heating water
+- <kbd>msg.payload.chReturnWaterTemp</kbd> : The temperature of the returned water by the heating infrastructure
+- <kbd>msg.payload.hotWaterPressure</kbd> : The pressure for hot water 
+- <kbd>msg.payload.chWaterPressure</kbd> : The pressure for the heating infrastructure
+- <kbd>msg.payload.setTemp</kbd> : The target temperature currently set
 
 ## Release notes
+
+#### v1.0.1
+
+- Added documentation
 
 #### v1.0.0
 
 - *paletteLabel* defined for all nodes
 - Initial implementation
-
-
