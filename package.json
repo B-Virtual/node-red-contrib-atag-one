@@ -16,5 +16,11 @@
             "atag-one" : "thermostat.js"
         }
     },
+    "scripts": {
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/B-Virtual/node-red-contrib-atag-one.git"
+    },    
     "license": "Apache-2.0"
 }
