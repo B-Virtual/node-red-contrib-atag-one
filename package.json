@@ -1,0 +1,20 @@
+{
+    "name": "node-red-contrib-atag-one",
+    "version": "1.0.0",
+    "description": "Atag One thermostat support for node-red",
+    "dependencies": {
+        "memory-cache": "latest",
+        "request": "latest"
+      },
+    "author": "Bjorn Bailleul <bjorn@b-virtual.com>",
+    "keywords": [
+        "node-red", "atagone", "atag-one"
+    ],
+
+    "node-red": {
+        "nodes": {
+            "atag-one" : "thermostat.js"
+        }
+    },
+    "license": "Apache-2.0"
+}

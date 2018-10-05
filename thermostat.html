@@ -1,0 +1,132 @@
+<!--
+
+  openHAB nodes for IBM's Node-Red
+  https://github.com/pdmangel/node-red-contrib-openhab2
+  (c) 2017, Peter De Mangelaere <peter.demangelaere@gmail.com>
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+-->
+<script type="text/x-red" data-template-name="atagone-controller">
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-config-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-host"><i class="fa fa-globe"></i> IP</label>
+        <input type="text" id="node-config-input-host">
+    </div>
+</script>
+
+<script type="text/x-red" data-template-name="atagone-get">
+    <style type="text/css">
+        .btn-group {
+            width: 70%;
+        }
+        .multiselect {
+            width: 100%;
+        }
+        .form-row input.multiselect-search {
+            width: 100%;
+        }
+        .multiselect-clear-filter {
+            display: none;
+        }
+        .dropdown-menu {
+            width: 100% !important;
+        }
+        .multiselect-container input[type="checkbox"] {
+            display: none;
+        }
+        .multiselect-container > li > a > label.radio {
+            margin: 5px;
+            width: 90%;
+            height: 100%;
+            cursor: pointer;
+            font-weight: 400;
+            padding: 3px 20px 3px 20px;
+        }
+        .multiselect-container label.radio input[type="radio"] {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="static/css/bootstrap-multiselect.css" type="text/css" />
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-controller"><i class="fa fa-globe"></i> Controller</label>
+        <input type="text" id="node-input-controller">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="atagone-controller">
+    <p>Configuration node for communication with an Atag One thermostat.</p>
+	<p></p>
+	<b>Configuration</b>
+    <ul>
+        <li><b>Name :</b> Specify a name for the configuration node</li>
+        <li><b>IP :</b> Specify the ip address</li>
+   	 </ul>
+</script>
+
+<script type="text/x-red" data-help-name="atagone-get">
+    <p>Gets the status of an Atag One thermostat on an input message.</p>
+	<p></p>
+	<b>Configuration</b>
+    <ul>
+        <li><b>Name :</b> Optionally specify a name</li>
+        <li><b>Controller :</b> Select the Atag One controller</li>
+   	 </ul>
+	<p></p>
+
+	<b>Messages injected in NodeRED flows (1 channel)</b>
+	The input message with addition of :
+    <ul>
+        <li><code>msg.payload</code> : the item object (name, label, state, ...)</li>
+         <li><code>msg.payload_in</code> : copy of incoming message's payload</li>
+  	</ul>
+</script>
+
+<script type="text/javascript">
+	RED.nodes.registerType('atagone-controller', {
+		category: 'config',
+		defaults: {
+			name: {value:"",required:true},
+			ip: {value:"localhost",required:true}
+        },
+        paletteLabel: "atagone-controller",
+		label: function() {
+			return this.name;
+		}
+	});
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('atagone-get',{
+        category: 'devices',
+        color: '#A6BBCF',
+        defaults: {
+            name:      {value:""},
+		    controller:  {value:"", type:"atagone-controller", required:true}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "node-red-contrib-atagone.png",
+        paletteLabel: "atagone-get",
+        label: function() {
+            return(this.name||"AtagOne get");
+        }
+    });
+</script>
