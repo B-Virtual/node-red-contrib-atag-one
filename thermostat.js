@@ -394,8 +394,8 @@ module.exports = function(RED) {
     RED.nodes.registerType("atagone-controller", AtagOneControllerNode);
 
 /**
-	* ====== openhab2-get ===================
-	* Gets the item data when
+	* ====== atagone-get ===================
+	* Gets the status from an Atag One thermostat
 	* messages received via node-red flows
 	* =======================================
 	*/

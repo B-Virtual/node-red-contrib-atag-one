@@ -1,4 +1,4 @@
-# node-red-contrib-openhab2
+# node-red-contrib-atag-one
 ## Description
 
 Nodes facilitating the automation of the *Atag One* ( <https://www.atag-one.com> ) with Node-RED ( <http://nodered.org> ).
