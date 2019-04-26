@@ -44,6 +44,10 @@ The state of the thermostat:
 
 ## Release notes
 
+#### v1.0.2
+
+- Added static bootstap CSS file
+
 #### v1.0.1
 
 - Added documentation
