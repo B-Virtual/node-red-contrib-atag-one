@@ -41,6 +41,7 @@ The state of the thermostat:
 - <kbd>msg.payload.hotWaterPressure</kbd> : The pressure for hot water 
 - <kbd>msg.payload.chWaterPressure</kbd> : The pressure for the heating infrastructure
 - <kbd>msg.payload.setTemp</kbd> : The target temperature currently set
+- <kbd>msg.payload.chTimeToTemp</kbd>: The time needed to get to the set temperature
 
 ## Release notes
 
