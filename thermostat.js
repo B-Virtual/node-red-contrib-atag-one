@@ -376,7 +376,8 @@ module.exports = function(RED) {
 								"chReturnWaterTemp": data.ch_return_temp,
 								"hotWaterPressure": data.dhw_water_pres,
 								"chWaterPressure": data.ch_water_pres,
-								"setTemp": data.shown_set_temp
+								"setTemp": data.shown_set_temp,
+								"chTimeToTemp": data.ch_time_to_temp
 							};
 		
 							return okCb(state);
