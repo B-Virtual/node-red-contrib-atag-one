@@ -1,6 +1,6 @@
 {
     "name": "node-red-contrib-atag-one",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Atag One thermostat support for node-red",
     "dependencies": {
         "memory-cache": "latest",
